@@ -20,8 +20,9 @@ nodes:
     hostPort: 443
     protocol: TCP
   extraMounts:
-  - hostPath: ../cluster-volume
+  - hostPath: ../cluster-volume/control-plane
     containerPath: /workspace
 - role: worker
-- role: worker
-- role: worker
+  extraMounts:
+  - hostPath: ../cluster-volume/worker
+    containerPath: /workspace
